@@ -1,0 +1,39 @@
+@import '../../shared/colors';
+
+$color-skill-point-max-text: #D0F4C0;
+
+.skilltree {
+  margin: 20px;
+  position: relative;
+
+  &-nodes {
+    display: flex;
+    flex: 1;
+  }
+
+  &-node-column {
+    display: flex;
+    flex-direction: column;
+    margin-right: 64px;
+  }
+
+  &-node-filler {
+    height: 23px;
+  }
+
+  &-line {
+    position: absolute;
+    background-color: $color-skill-point-max-text;
+  }
+
+  &-prereq-label {
+    position: absolute;
+    color: #f7ee76;
+    font-size: 16px;
+    text-shadow:
+     -1px -1px 0 $color-primary,  
+      1px -1px 0 $color-primary,
+      -1px 1px 0 $color-primary,
+       1px 1px 0 $color-primary;
+  }
+}

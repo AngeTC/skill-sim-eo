@@ -1,0 +1,107 @@
+@import '../../../shared/colors';
+
+$color-skill: $color-primary;
+$color-skill-border: #6DB689;
+$color-skill-text: #6DB689;
+$color-skill-point-current-text: $color-primary;
+$color-skill-point-max: #5B9A73;
+$color-skill-point-max-text: #D0F4C0;
+
+$color-skill-default: #677774;
+$color-skill-border-default: #a1bdac;
+$color-skill-text-default: #a1bdac;
+$color-skill-point-current-text-default: #677774;
+$color-skill-point-max-default: #94aa9d;
+$color-skill-point-max-text-default: #D0F4C0;
+
+$skill-height: 30px;
+$skill-width: 200px;
+$skill-margin-bottom: 10px;
+$skill-border-width: 3px;
+
+.skill {
+  height: $skill-height;
+  width: $skill-width;
+  margin-bottom: $skill-margin-bottom;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-skill;
+  border: $skill-border-width solid $color-skill-border;
+  border-radius: $skill-height;
+  z-index: 1;
+  user-select: none;
+  cursor: pointer;
+
+  &-name {
+    padding-left: 10px;
+    color: $color-skill-text;
+  }
+
+  &-points {
+    position: relative;
+    height: 26px;
+    width: 50px;
+    margin-right: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 28px;
+    background-color: $color-skill-border;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 32%;
+      flex-basis: 100%;
+      width: 100%;
+      height: 100%;
+      background-color: $color-skill-point-max;
+      transform: rotate(-65deg);
+    }
+
+    &-current {
+      flex: 1;
+      font-size: 17px;
+      text-align: center;
+      color: $color-skill-point-current-text;
+    }
+
+    &-max {
+      z-index: 1;
+      flex: 1;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      color: $color-skill-point-max-text;
+    }
+  }
+
+  &.has-no-points {
+    background-color: $color-skill-default;
+    border: $skill-border-width solid $color-skill-border-default;
+
+    .skill {
+      &-name {
+        color: $color-skill-text-default;
+      }
+
+      &-points {
+        background-color: $color-skill-border-default;
+
+        &::before {
+          background-color: $color-skill-point-max-default;
+        }
+
+        &-current {
+          color: $color-skill-point-current-text-default;
+        }
+
+        &-max {
+          color: $color-skill-point-max-text-default;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import '../../shared/colors';
+
+$label-text-color: #ffffff;
+$label-outline: #000000;
+
+.header {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  background-color: $color-primary;
+
+  &-label {
+    color: $label-text-color;
+    font-size: 16px;
+  }
+
+  &-select {
+    width: 120px;
+  }
+
+  &-section {
+    height: 100px;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &-logo {
+    height: 100px;
+    width: 200px;
+    background-color: #00d9ff;
+
+    margin: 0px 15px;
+  }
+
+  &-skillpoint {
+    &-count {
+      color: $label-text-color;
+      font-size: 16px;
+      font-weight: bold;
+
+      &.on-max {
+        color: greenyellow;
+      }
+
+      &.over-max {
+        color: red;
+      }
+    }
+  }
+}
